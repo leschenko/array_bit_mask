@@ -1,6 +1,6 @@
 # BitMask
 
-Creates methods that accepts array of values and save them as bit mask to the attribute with an "_mask" suffix using specified source
+Creates methods that accepts array of values and save them as bit mask to the attribute with an "_mask" suffix using specified source.
 
 ## Installation
 
