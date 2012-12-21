@@ -19,7 +19,7 @@ Or install it yourself as:
 ## Usage
 
 Call `as_bit_mask` in an ActiveRecord class and pass the name of the attribute you wish to be the accessor for array of values.
-In the option `:source` you can specify array of values or method name which should return an array.
+In the option `:source` you can specify array of values or method name which return an array.
 Bit mask would be saved to attribute with an "_mask" suffix, but you can also specify it in `:column` option
 
 ```ruby

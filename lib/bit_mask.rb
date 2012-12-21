@@ -16,7 +16,7 @@ module BitMask
     #   Specify the column which would be used to store bit mask. By default, this is an attribute with an "_mask" suffix.
     #
     # === Example
-    #   as_bit_mask :actions, :source => [:create, :show, :update]
+    #   as_bit_mask :actions, :source => [:create, :show, :update], :column => :my_mask_column
     #   as_bit_mask :actions, :source => :subject_actions
     # will save bit mask to :actions_mask attribute
     def as_bit_mask(attr, options={})
