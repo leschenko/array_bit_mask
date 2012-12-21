@@ -35,6 +35,11 @@ describe BitMask do
     subject.colors.should =~ []
   end
 
+  it 'should store array' do
+    subject.colors = []
+    subject.colors.should eq([])
+  end
+
   it 'should return empty array for nil mask' do
     subject.colors_mask = nil
     subject.colors.should =~ []

@@ -14,8 +14,9 @@ module BitMask
 
       define_method "#{attr}=" do |val|
         source = bit_mask_source_for(options[:source])
-        res = self.send("#{options[:column]}=", (val.map(&:to_sym) & source).map { |a| 2**source.index(a) }.sum)
-        instance_variable_set("@#{attr}", res)
+        values = val.map(&:to_sym) & source
+        res = self.send("#{options[:column]}=", values.map { |a| 2**source.index(a) }.sum)
+        instance_variable_set("@#{attr}", values)
       end
 
       define_method attr do
