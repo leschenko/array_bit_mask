@@ -7,6 +7,18 @@ module BitMask
   end
 
   module ClassMethods
+    # Creates methods that accepts array of values and save them as bit mask to the attribute with an "_mask" suffix using specified source
+    #
+    # === Options
+    # [:source]
+    #   Specify array of values of method name which should return an array.
+    # [:column]
+    #   Specify the column which would be used to store bit mask. By default, this is an attribute with an "_mask" suffix.
+    #
+    # === Example
+    #   as_bit_mask :actions, :source => [:create, :show, :update]
+    #   as_bit_mask :actions, :source => :subject_actions
+    # will save bit mask to :actions_mask attribute
     def as_bit_mask(attr, options={})
       return 0 unless options[:source]
 

@@ -1,6 +1,6 @@
 # BitMask
 
-TODO: Write a gem description
+Creates methods that accepts array of values and save them as bit mask to the attribute with an "_mask" suffix using specified source
 
 ## Installation
 
@@ -18,7 +18,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Call `as_bit_mask` in an ActiveRecord class and pass the name of the attribute you wish to be the accessor for array of values.
+In the option `:source` you can specify array of values or method name which should return an array.
+Bit mask would be saved to attribute with an "_mask" suffix, but you can also specify it in `:column` option
+
+```ruby
+class Permission < ActiveRecord::Base
+  as_bit_mask :actions, :source => [:create, :show, :update]
+end
+
+permission = Permission.new
+permission.actions = [:show, :update]
+permission.actions_mask
+=> 6
+```
 
 ## Contributing
 
