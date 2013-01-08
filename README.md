@@ -1,4 +1,4 @@
-# BitMask
+# ArrayBitMask
 
 Creates methods that accepts array of values and save them as bit mask to the attribute with an "_mask" suffix using specified source.
 
@@ -6,7 +6,7 @@ Creates methods that accepts array of values and save them as bit mask to the at
 
 Add this line to your application's Gemfile:
 
-    gem 'bit_mask'
+    gem 'array_bit_mask'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install bit_mask
+    $ gem install array_bit_mask
 
 ## Usage
 

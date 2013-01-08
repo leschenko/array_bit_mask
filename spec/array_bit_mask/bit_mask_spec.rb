@@ -3,7 +3,7 @@ require 'spec_helper'
 class WithBitMask
   attr_accessor :colors_mask, :second_colors_mask
 
-  include BitMask
+  include ArrayBitMask
   as_bit_mask :colors, :source => :subject_colors
   as_bit_mask :second_colors, :source => [:red, :green, :black, :white]
 
@@ -12,7 +12,7 @@ class WithBitMask
   end
 end
 
-describe BitMask do
+describe ArrayBitMask do
   subject { WithBitMask.new }
 
   it 'should add accessor methods' do

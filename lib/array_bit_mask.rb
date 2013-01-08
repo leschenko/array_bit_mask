@@ -1,7 +1,7 @@
-require "bit_mask/version"
-require "bit_mask/railtie" if defined? Rails
+require 'array_bit_mask/version'
+require 'array_bit_mask/railtie' if defined? Rails
 
-module BitMask
+module ArrayBitMask
   def self.included(base)
     base.send(:extend, ClassMethods)
   end

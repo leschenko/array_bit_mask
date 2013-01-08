@@ -1,2 +1,2 @@
 require 'active_support/core_ext'
-require 'bit_mask'
+require 'array_bit_mask'
