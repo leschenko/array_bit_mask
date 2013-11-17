@@ -1,5 +1,7 @@
 # ArrayBitMask
 
+[![Dependency Status](https://gemnasium.com/leschenko/array_bit_mask.png)](https://gemnasium.com/leschenko/array_bit_mask)
+
 Creates methods that accepts array of values and save them as bit mask to the attribute with an "_mask" suffix using specified source.
 
 ## Installation
