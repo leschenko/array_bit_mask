@@ -22,12 +22,12 @@ module ArrayBitMask
     def as_bit_mask(attr, options={})
       return 0 unless options[:source]
 
-      options.reverse_merge!(:column => "#{attr}_mask")
+      options[:column] ||= "#{attr}_mask"
 
       define_method "#{attr}=" do |val|
         source = bit_mask_source_for(options[:source])
         values = val.map(&:to_sym) & source
-        res = self.send("#{options[:column]}=", values.map { |a| 2**source.index(a) }.sum)
+        res = self.send("#{options[:column]}=", values.map { |a| 2**source.index(a) }.inject(:+))
         instance_variable_set("@#{attr}", values)
       end
 
