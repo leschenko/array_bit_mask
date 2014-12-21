@@ -22,38 +22,38 @@ describe ArrayBitMask do
 
   it 'should store bit mask' do
     subject.colors = [:red, :white]
-    subject.colors_mask.should eq(9)
+    expect(subject.colors_mask).to eq 9
   end
 
   it 'should restore array from bit mask' do
     subject.colors_mask = 6
-    subject.colors.should =~ [:green, :black]
+    expect(subject.colors).to match_array [:green, :black]
   end
 
   it 'should return empty array for zero mask' do
     subject.colors_mask = 0
-    subject.colors.should =~ []
+    expect(subject.colors).to eq []
   end
 
   it 'should store array' do
     subject.colors = []
-    subject.colors.should eq([])
+    expect(subject.colors).to eq []
   end
 
   it 'should return empty array for nil mask' do
     subject.colors_mask = nil
-    subject.colors.should =~ []
+    expect(subject.colors).to eq []
   end
 
   context 'source as array' do
     it 'should store bit mask' do
       subject.second_colors = [:red, :white]
-      subject.second_colors_mask.should eq(9)
+      expect(subject.second_colors_mask).to eq 9
     end
 
     it 'should restore array from bit mask' do
       subject.second_colors_mask = 6
-      subject.second_colors.should =~ [:green, :black]
+      expect(subject.second_colors).to match_array [:green, :black]
     end
   end
 
